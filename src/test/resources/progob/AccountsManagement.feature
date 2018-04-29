@@ -6,7 +6,6 @@ Feature: Accounts management functionality
     Given a customer has two accounts open
     When he lists his accounts
     Then both of them are on the list
-    And no other accounts is listed
 
     Scenario: open account
       Given a customer wants to open an account
