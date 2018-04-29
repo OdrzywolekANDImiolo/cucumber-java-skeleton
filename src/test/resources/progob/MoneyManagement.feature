@@ -1,4 +1,7 @@
 Feature: Money management on bank account
+  As a customer
+  I want transfer my money between bank accounts
+
   Scenario: transfer money
     Given balance on account A is 100
     And balance on account B is 1000

@@ -1,4 +1,4 @@
-package test.progob;
+package progob;
 
 
 import cucumber.api.CucumberOptions;
@@ -7,8 +7,8 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "test.resources.progob",
-        glue = "test.progob"
+        features = "src/test/resources",
+        glue = "progob"
 )
-public class RunAccountsTest {
+public class TestRunner {
 }

@@ -1,4 +1,7 @@
 Feature: Accounts management functionality
+  As a customer
+  I want manage my accounts in the bank
+
   Scenario: list accounts
     Given a customer has two accounts open
     When he lists his accounts
