@@ -24,7 +24,7 @@ public class AccountsManagementStepdefs {
         accountRepository = new HashSet<>();
         accountRepository.add(account1);
         accountRepository.add(account2);
-        bank = new MemoryBank(accountRepository);
+        bank = new Bank(accountRepository);
     }
 
     @When("^he lists his accounts$")
@@ -41,7 +41,6 @@ public class AccountsManagementStepdefs {
     public void a_customer_wants_to_open_an_account() {
         client = new Client("Andrzej", "Kowalski");
         newClientAccount = new Account(client);
-
     }
 
     @When("^his account is created$")
