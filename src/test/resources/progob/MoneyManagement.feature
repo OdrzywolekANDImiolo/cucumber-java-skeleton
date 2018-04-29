@@ -1,6 +1,6 @@
 Feature: Money management on bank account
   As a customer
-  I want transfer my money between bank accounts
+  I want manage money on my accounts
 
   Scenario: transfer money
     Given balance on account A is 100
@@ -10,11 +10,11 @@ Feature: Money management on bank account
     And balance on account B is 1099.91
 
   Scenario: deposit money
-    Given balance on the account is 100
-    When customer deposits 10 to this account
-    Then balance on the account is 110
+    Given balance on account A is 100
+    When customer deposits 10 to account A
+    Then balance on account A is 110
 
   Scenario: withdrawn money
-    Given balance on the account is 100
-    When customer withdrawns 90 to this account
-    Then balance on the account is 10
+    Given balance on account A is 100
+    When customer withdrawns 90 from account A
+    Then balance on account A is 10
