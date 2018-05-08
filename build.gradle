@@ -1,5 +1,4 @@
 apply plugin: 'java'
-apply plugin: 'jacoco'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -10,6 +9,12 @@ project.ext {
     junitVersion = '4.12'
 }
 
+configurations {
+    cucumberRuntime {
+        extendsFrom testRuntime
+    }
+}
+
 dependencies {
     testCompile 'io.cucumber:cucumber-java:' + cucumberVersion
     testCompile 'io.cucumber:cucumber-junit:' + cucumberVersion
@@ -17,15 +22,18 @@ dependencies {
     testCompile 'junit:junit:' + junitVersion
 }
 
-jacocoTestReport {
-    reports {
-        xml.enabled true
-        html.enabled false
-    }
-}
-
 repositories {
     mavenCentral()
 }
 
-check.dependsOn jacocoTestReport
+task cucumber() {
+    dependsOn assemble, compileTestJava
+    doLast {
+        javaexec {
+            main = "cucumber.api.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+            args = ['--plugin', 'pretty', '--glue', 'progob', 'src/test/resources']
+        }
+    }
+}
+
