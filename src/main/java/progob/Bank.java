@@ -1,5 +1,6 @@
 package progob;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -12,26 +13,36 @@ public class Bank implements IBank {
 
     @Override
     public List<Account> getClientAccounts(Client client) {
-        return null;
+        ArrayList<Account> lista= new ArrayList<>();
+        for(Account a: accounts)
+        {
+            if(client.getClientId()==a.getClientId())
+            {
+                lista.add(a);
+            }
+        }
+        return lista;
     }
 
     @Override
     public Account createAccount(Account clientAccount) {
-        return null;
+        accounts.add(clientAccount);
+        return clientAccount;
     }
 
     @Override
-    public double deposit(Account toAccount, double amount) {
-        return 0;
+    public void deposit(Account toAccount, double amount) {
+        toAccount.addBalance(amount);
     }
 
     @Override
-    public double transfer(Account fromAccount, Account toAccount, double amount) {
-        return 0;
+    public void transfer(Account fromAccount, Account toAccount, double amount) throws WithdrawException {
+        fromAccount.withdraw(amount);
+        toAccount.addBalance(amount);
     }
 
     @Override
-    public double withdraw(Account fromAccount, double amount) {
-        return 0;
+    public void withdraw(Account fromAccount, double amount) throws WithdrawException{
+        fromAccount.withdraw(amount);
     }
 }

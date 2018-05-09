@@ -13,12 +13,22 @@ public class Account {
         return balance;
     }
 
-    public double addBalance(double balance) {
-        return 0;
+    public void addBalance(double amount) {
+        balance += amount;
     }
 
-    public double withdraw(double amount) {
-        return 0;
+    public void withdraw(double amount) throws WithdrawException{
+
+        if (amount> balance) {
+            throw new WithdrawException("Not enough money on account");
+        }
+        else
+        {
+            balance -= amount;
+        }
+    }
+    public int getClientId(){
+        return client.getClientId();
     }
 
 
