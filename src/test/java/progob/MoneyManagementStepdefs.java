@@ -30,7 +30,7 @@ public class MoneyManagementStepdefs {
     }
 
     @When("^(.+) is transfered from account A to B$")
-    public void is_transfered_from_account_A_to_B(double amount) {
+    public void is_transfered_from_account_A_to_B(double amount) throws WithdrawException {
         bank.transfer(accountA, accountB, amount);
     }
 
@@ -40,7 +40,7 @@ public class MoneyManagementStepdefs {
     }
 
     @When("^customer withdrawns (.+) from account A$")
-    public void customer_withdrawns_from_account_A(double amount) {
+    public void customer_withdrawns_from_account_A(double amount) throws WithdrawException{
         bank.withdraw(accountA, amount);
     }
 }
