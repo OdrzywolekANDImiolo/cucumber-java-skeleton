@@ -1,7 +1,5 @@
-package unitTesty;
+package progob;
 
-import cucumber.api.java.en_old.Ac;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import progob.Account;
@@ -13,7 +11,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 
 
-public class Account_tests {
+public class AccountTest {
     private Account konto;
     @Before
     public void setup() {

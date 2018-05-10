@@ -1,13 +1,12 @@
-package unitTesty;
+package progob;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import progob.Client;
 
 import static org.junit.Assert.assertFalse;
 
-public class Client_tests {
+public class ClientTest {
 
     private Client klient;
     @Before

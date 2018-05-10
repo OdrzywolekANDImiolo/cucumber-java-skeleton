@@ -1,4 +1,4 @@
-package unitTesty;
+package progob;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -8,7 +8,7 @@ import progob.Person;
 import static org.junit.Assert.assertFalse;
 
 
-public class Person_tests {
+public class PersonTest {
 
     private Person osoba;
     @Before

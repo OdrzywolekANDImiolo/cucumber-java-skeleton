@@ -1,13 +1,8 @@
-package unitTesty;
+package progob;
 
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import progob.Account;
-import progob.Bank;
-import progob.*;
 
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
@@ -16,7 +11,7 @@ import static junit.framework.TestCase.fail;
 import static org.junit.Assert.*;
 
 
-public class Bank_tests {
+public class BankTest {
 
     Set<Account> zbiorKont;
     Bank bank;
