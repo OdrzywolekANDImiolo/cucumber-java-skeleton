@@ -4,8 +4,8 @@ import java.util.List;
 
 public interface IBank {
     List<Account> getClientAccounts(Client client);
-    Account createAccount(Account clientAccount);
-    double deposit(Account toAccount, double amount);
-    double transfer(Account fromAccount, Account toAccount, double amount);
-    double withdraw(Account fromAccount, double amount);
+    public Account createAccount(Account clientAccount);
+    void deposit(Account toAccount, double amount);
+    void transfer(Account fromAccount, Account toAccount, double amount) throws WithdrawException;
+    void withdraw(Account fromAccount, double amount) throws WithdrawException;
 }

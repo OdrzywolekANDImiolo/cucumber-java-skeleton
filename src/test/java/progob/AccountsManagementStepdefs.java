@@ -45,6 +45,8 @@ public class AccountsManagementStepdefs {
 
     @When("^his account is created$")
     public void his_account_is_created() {
+        accountRepository = new HashSet<>();
+        bank = new Bank(accountRepository);
         bank.createAccount(newClientAccount);
     }
 

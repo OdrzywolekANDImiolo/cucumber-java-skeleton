@@ -9,4 +9,12 @@ public class Client extends Person {
         clientId = id;
         id++;
     }
+
+    public int getClientId() {
+        return clientId;
+    }
+
+    public static int getStaticId() {
+        return id;
+    }
 }
