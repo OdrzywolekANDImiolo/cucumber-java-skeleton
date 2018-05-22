@@ -1,8 +1,12 @@
 package progob;
 
+import java.util.*;
+
+
 public class Account {
     private Client client;
     private double balance;
+
 
     public Account(Client client) {
         this.client = client;
@@ -32,4 +36,11 @@ public class Account {
     }
 
 
+    public List<Double> getClientDeposits() {
+        ArrayList<Double> lista= new ArrayList<>();
+        return lista;
+    }
+
+    public void createDeposit(double amount) {
+    }
 }
