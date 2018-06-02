@@ -1,8 +1,12 @@
 package progob;
 
+import java.util.*;
+
+
 public class Account {
     private Client client;
     private double balance;
+
 
     public Account(Client client) {
         this.client = client;
@@ -30,6 +34,5 @@ public class Account {
     public int getClientId(){
         return client.getClientId();
     }
-
 
 }

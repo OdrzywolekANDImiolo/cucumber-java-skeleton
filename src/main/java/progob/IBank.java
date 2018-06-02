@@ -8,4 +8,7 @@ public interface IBank {
     void deposit(Account toAccount, double amount);
     void transfer(Account fromAccount, Account toAccount, double amount) throws WithdrawException;
     void withdraw(Account fromAccount, double amount) throws WithdrawException;
+
+    void createDeposit(Deposit deposit);
+    List<Deposit> getClientDeposits(Client client);
 }

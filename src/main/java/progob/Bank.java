@@ -7,6 +7,8 @@ import java.util.Set;
 public class Bank implements IBank {
     private Set<Account> accounts;
 
+    public Bank(){};
+
     public Bank(Set<Account> accountRepository) {
         this.accounts = accountRepository;
     }
@@ -45,4 +47,16 @@ public class Bank implements IBank {
     public void withdraw(Account fromAccount, double amount) throws WithdrawException{
         fromAccount.withdraw(amount);
     }
+
+    @Override
+    public void createDeposit(Deposit deposit) { //TO DO
+
+    }
+
+    @Override
+    public List<Deposit> getClientDeposits(Client client) {  //TO DO
+        ArrayList<Deposit> lista= new ArrayList<>();
+       return lista;
+    }
+
 }

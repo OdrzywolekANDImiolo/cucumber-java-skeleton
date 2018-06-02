@@ -95,4 +95,17 @@ public class BankTest {
         assertTrue(bank.getClientAccounts(klient1).contains(konto_Klienta2));
         assertFalse(bank.getClientAccounts(klient1).contains(konto_Klienta3));
     }
+    public void testDeposits() throws WithdrawException
+    {
+        Client klient=new Client("Kamil", "Nowak");
+        Account konto_Klienta = new Account(klient);
+        konto_Klienta.addBalance(100);
+        Deposit lokata_Klienta1 = new Deposit(konto_Klienta, 60);
+        bank.createDeposit(lokata_Klienta1);
+        assertTrue(bank.getClientDeposits(klient).contains(lokata_Klienta1));
+        Deposit lokata_Klienta2 = new Deposit(konto_Klienta, 40);
+        bank.createDeposit(lokata_Klienta2);
+        assertTrue(bank.getClientDeposits(klient).contains(lokata_Klienta1));
+        assertEquals(bank.getClientDeposits(klient).size(), 2);
+    }
 }
