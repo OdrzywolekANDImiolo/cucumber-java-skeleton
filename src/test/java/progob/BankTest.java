@@ -95,7 +95,7 @@ public class BankTest {
         assertTrue(bank.getClientAccounts(klient1).contains(konto_Klienta2));
         assertFalse(bank.getClientAccounts(klient1).contains(konto_Klienta3));
     }
-    public void testDeposits() throws WithdrawException
+    public void testGetClientDeposits_When_ClientHasTwoDepositsInBank() throws WithdrawException
     {
         Client klient=new Client("Kamil", "Nowak");
         Account konto_Klienta = new Account(klient);

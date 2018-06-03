@@ -2,12 +2,6 @@ package progob;
 
 import org.junit.Before;
 import org.junit.Test;
-import progob.Account;
-import progob.Client;
-import progob.WithdrawException;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static junit.framework.TestCase.fail;
 import static org.junit.Assert.assertEquals;
@@ -16,7 +10,6 @@ import static org.junit.Assert.assertFalse;
 
 public class AccountTest {
     private Account konto;
-    private List<Double> clientDeposits;
     @Before
     public void setup() {
         Client klient = new Client("Kamil", "Nowak");

@@ -18,7 +18,7 @@ public class DepositTest {
     }
 
     @Test
-    public void testDeposits() throws WithdrawException {
+    public void testCreateDeposit() throws WithdrawException {
         konto.addBalance(100);
         deposit = new Deposit(konto, 60);
         assertEquals(40.0, konto.getBalance(),0);
