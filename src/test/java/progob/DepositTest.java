@@ -8,7 +8,6 @@ import static org.junit.Assert.assertEquals;
 
 
 public class DepositTest {
-}
     private Account konto;
     private Deposit deposit;
     @Before
