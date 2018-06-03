@@ -2,9 +2,6 @@ package progob;
 
 import org.junit.Before;
 import org.junit.Test;
-import progob.Account;
-import progob.Client;
-import progob.WithdrawException;
 
 import static junit.framework.TestCase.fail;
 import static org.junit.Assert.assertEquals;
