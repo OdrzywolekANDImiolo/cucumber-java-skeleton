@@ -1,16 +1,24 @@
 package progob;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 public class Bank implements IBank {
     private Set<Account> accounts;
+    private Set<Deposit> deposits;
 
-    public Bank(){};
 
-    public Bank(Set<Account> accountRepository) {
+    public Bank()
+    {
+        accounts = new HashSet<>();
+        deposits = new HashSet<>();
+    }
+    public Bank(Set<Account> accountRepository)
+    {
         this.accounts = accountRepository;
+       // this.deposits = depositRepository;
     }
 
     @Override
@@ -49,14 +57,21 @@ public class Bank implements IBank {
     }
 
     @Override
-    public void createDeposit(Deposit deposit) { //TO DO
-
+    public void createDeposit(Deposit clientDeposit) {
+        deposits.add(clientDeposit);
     }
 
     @Override
     public List<Deposit> getClientDeposits(Client client) {  //TO DO
-        ArrayList<Deposit> lista= new ArrayList<>();
-       return lista;
+        ArrayList<Deposit> listClientDeposits= new ArrayList<>();
+        for(Deposit d: deposits)
+        {
+            if(client.getClientId() == d.getClientId())
+            {
+                listClientDeposits.add(d);
+            }
+        }
+       return listClientDeposits;
     }
 
 }
